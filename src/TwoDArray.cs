@@ -17,6 +17,7 @@ namespace N
                     Console.Write(arr[i,j]+" ");
                 Console.WriteLine();
             }
+            Console.WriteLine("Rank of the array: " + arr.Rank);
         }
     }
 }
