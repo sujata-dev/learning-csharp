@@ -4,7 +4,6 @@ namespace size
 {
     class abc
     {
-        //String str = @"Tutorials Point";
         static void Main(string[] arg)
         {
             int num = Convert.ToInt32(Console.ReadLine());
