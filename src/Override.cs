@@ -4,7 +4,10 @@ namespace N
 {
     abstract class Shape
     {
-        public abstract double area();
+        public virtual double area()
+        {
+            return 0;
+        }
     }
 
     class Circle: Shape
