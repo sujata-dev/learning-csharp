@@ -12,16 +12,31 @@ namespace N
         }
         public void disp()
         {
-            Console.Write(h + " x " + w + " = ");
+            Console.WriteLine("h = " + h + "\nw = " + w);
         }
     }
-    class Rect: Shape
+
+    public interface PaintCost
     {
+        void getCost(int cost);
+    }
+
+    class Rect: Shape, PaintCost
+    {
+        int cost;
         public Rect(int h, int w): base(h, w) {}
+        public void getCost(int cost)
+        {
+            this.cost = cost;
+        }
         public int area()
         {
             base.disp();
             return h * w;
+        }
+        public int costcalc()
+        {
+            return area() * cost;
         }
     }
 
@@ -30,7 +45,8 @@ namespace N
         static void Main(string[] arg)
         {
             Rect r = new Rect(2, 3);
-            Console.Write(r.area());
+            r.getCost(5);
+            Console.Write("Cost: " + r.costcalc());
         }
     }
 }
