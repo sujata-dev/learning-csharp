@@ -13,12 +13,14 @@ namespace N
                 {
                     sw.WriteLine("abc");
                     sw.WriteLine("def");
+                    sw.Close();
                 }
                 using (StreamReader sr = new StreamReader("a.txt"))
                 {
                     string line;
                     while((line = sr.ReadLine()) != null)
                         Console.WriteLine(line);
+                    sr.Close();
                 }
             }
             catch(Exception e)
