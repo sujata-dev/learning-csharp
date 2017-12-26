@@ -5,7 +5,7 @@ namespace N
     class Student
     {
         private int id = 0;
-        private string name = "abc";
+        public string name { get; set; } = "abc"; // auto-implemented properties
 
         public int Prop_Id
         {
@@ -18,20 +18,9 @@ namespace N
                 id = value;
             }
         }
-        public string Prop_Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
         public override string ToString()
         {
-            return "ID: " + Prop_Id + "\nName: " + Prop_Name;
+            return "ID: " + Prop_Id + "\nName: " + name;
         }
     }
     class Properties
@@ -40,7 +29,7 @@ namespace N
         {
             Student s = new Student();
             s.Prop_Id = 123;
-            s.Prop_Name = "Ria";
+            s.name = "Ria";
             Console.WriteLine(s);
         }
 
